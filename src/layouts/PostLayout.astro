@@ -1,0 +1,29 @@
+---
+import MainHead from '../components/MainHead.astro';
+import Nav from '../components/Nav.astro';
+import MainContent from '../components/MainContent.astro';
+import Footer from '../components/Footer.astro';
+
+const {description, canonicalURL, image} = Astro.props;
+const title = `${Astro.props.content.title} | Molecule Engineering Blog`
+---
+
+<html lang="en">
+	<head>
+		<title>{title}</title>
+		<MainHead {title} {description} image={image} {canonicalURL} />
+	</head>
+
+	<body>
+		<div class="min-h-screen flex flex-col">
+			<Nav />
+			<div class="flex grow justify-center px-8">
+				<MainContent>
+					<!-- slot: your page content will be injected here. -->
+					<slot />
+				</MainContent>
+			</div>
+			<Footer />
+		</div>
+	</body>
+</html>
