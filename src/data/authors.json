@@ -1,11 +1,11 @@
 {
   "don": {
     "name": "Don Quixote",
-    "image": "/images/don.jpg"
+    "image": "/images/authors/don.jpg"
   },
   "sancho": {
     "name": "Sancho Panza",
-    "image": "/images/sancho.jpg"
+    "image": "/images/authors/sancho.jpg"
   },
   "schmackofant": {
     "name": "Schmackofant",

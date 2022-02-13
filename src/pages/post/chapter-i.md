@@ -3,7 +3,7 @@ layout: ../../layouts/PostLayout.astro
 title: Chapter I
 tag: movie
 date: 2021-05-17
-image: /images/chapter-01.jpg
+image: /images/derick.jpg
 author: don
 description: Which Treats of the Character and Pursuits of the Famous Gentleman Don Quixote of La Mancha
 ---

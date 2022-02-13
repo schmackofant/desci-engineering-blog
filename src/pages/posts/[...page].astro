@@ -1,6 +1,6 @@
 ---
-import MainHead from '../../components/MainHead.astro';
-import Nav from '../../components/Nav.astro';
+import { SITE } from '../../config.ts';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 import PostPreview from '../../components/PostPreview.astro';
 import Pagination from '../../components/Pagination.astro';
 import authorData from '../../data/authors.json';
@@ -24,57 +24,33 @@ export async function getStaticPaths({ paginate, rss }) {
 	//   });
 
 	// Return a paginated collection of paths for all posts
-	return paginate(sortedPosts, { pageSize: 1 });
+	return paginate(sortedPosts, { pageSize: SITE.postsPerPage });
 }
 
+const { page } = Astro.props;
+
 // page
-let title = 'Don’s Blog';
-let description = 'An example blog on Astro';
+const title = `All posts (Page ${page.currentPage}) | ${SITE.title}`
+let description = SITE.description;
 let canonicalURL = Astro.request.canonicalURL;
 
 // collection
 interface MarkdownFrontmatter {
 	date: number;
-	description: string;
-	title: string;
+	image: string;
+	author: string;
 }
-
-const { page } = Astro.props;
 ---
 
-<html lang="en">
-	<head>
-		<title>{title}</title>
-		<MainHead {title} {description} image={page.data[0].image} canonicalURL={canonicalURL.toString()} prev={page.url.prev} next={page.url.next} />
+<BaseLayout {title} {description} image={page.data[0].image} {canonicalURL}>
+	<h1 class="mt-8 sm:mt-12 mb-10 text-3xl border-b border-gray-400">
+		All Articles
+		<small class="text-gray-500">({page.start + 1}–{page.end + 1} of {page.total})</small>
+	</h1>
 
-		<style lang="scss">
-			.title {
-				font-size: 3em;
-				letter-spacing: -0.04em;
-				margin-top: 2rem;
-				margin-bottom: 0;
-				text-align: center;
-			}
-
-			.count {
-				font-size: 1em;
-				display: block;
-				text-align: center;
-			}
-		</style>
-	</head>
-
-	<body>
-		<Nav {title} />
-
-		<main class="wrapper">
-			<h2 class="title">All Posts</h2>
-			<small class="count">{page.start + 1}–{page.end + 1} of {page.total}</small>
-			{page.data.map((post) => <PostPreview post={post} author={authorData[post.author]} />)}
-		</main>
-
-		<footer>
-			<Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
-		</footer>
-	</body>
-</html>
+	<div class="space-y-12 sm:space-y-20">
+		{page.data.map((post) => <PostPreview post={post} image={post.image} author={authorData[post.author]} />)}
+	</div>
+	<Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+	<div class="pb-24"></div>
+</BaseLayout>
