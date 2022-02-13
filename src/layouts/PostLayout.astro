@@ -1,11 +1,12 @@
 ---
+import { SITE } from '../config.ts';
 import MainHead from '../components/MainHead.astro';
 import Nav from '../components/Nav.astro';
 import MainContent from '../components/MainContent.astro';
 import Footer from '../components/Footer.astro';
 
 const {description, canonicalURL, image} = Astro.props;
-const title = `${Astro.props.content.title} | Molecule Engineering Blog`
+const title = `${Astro.props.content.title} | ${SITE.title}`
 ---
 
 <html lang="en">

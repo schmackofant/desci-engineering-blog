@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   content: [
     './public/**/*.html',
@@ -9,6 +11,9 @@ module.exports = {
     extend: {
       colors: {
         'molecule': '#0dc1d2',
+      },
+      fontFamily: {
+        sans: ['Sora', ...defaultTheme.fontFamily.sans],
       },
     }
   }

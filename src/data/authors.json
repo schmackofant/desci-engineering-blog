@@ -6,5 +6,9 @@
   "sancho": {
     "name": "Sancho Panza",
     "image": "/images/sancho.jpg"
+  },
+  "schmackofant": {
+    "name": "Schmackofant",
+    "image": "/images/authors/schmackofant.png"
   }
 }

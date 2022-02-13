@@ -1,4 +1,5 @@
 ---
+import { SITE } from '../config.ts';
 import BaseLayout from '../layouts/BaseLayout.astro'
 import PostPreview from '../components/PostPreview.astro';
 import authorData from '../data/authors.json';
@@ -13,8 +14,8 @@ interface MarkdownFrontmatter {
 // You can write any JavaScript/TypeScript that you'd like here.
 // It will run during the build, but never in the browser.
 // All variables are available to use in the HTML template below.
-let title = 'Molecule Engineering Blog';
-let description = 'An example blog on Astro';
+let title = SITE.title;
+let description = SITE.description;
 let canonicalURL = Astro.request.canonicalURL;
 
 // Data Fetching: List all Markdown posts in the repo.
@@ -23,5 +24,7 @@ allPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf())
 ---
 
 <BaseLayout {title} {description} image={allPosts[0].image} {canonicalURL}>
-  {allPosts.map((post) => <PostPreview post={post} author={authorData[post.author]} />)}
+	<div class="pt-12 pb-24 space-y-20">
+		{allPosts.map((post) => <PostPreview post={post} image={post.image} author={authorData[post.author]} />)}
+	</div>
 </BaseLayout>
