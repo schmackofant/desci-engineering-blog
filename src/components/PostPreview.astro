@@ -4,11 +4,7 @@ export interface Props {
 	author: string;
 	image: string;
 }
-const { post, author, image } = Astro.props;
-
-function formatDate(date) {
-	return new Date(date).toUTCString().replace(/(\d\d\d\d) .*/, '$1'); // remove everything after YYYY
-}
+const { post, author } = Astro.props;
 ---
 
 <article class="border-b border-gray-150 group">

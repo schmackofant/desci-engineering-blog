@@ -16,6 +16,9 @@ module.exports = {
         sans: ['Sora', ...defaultTheme.fontFamily.sans],
       },
     }
-  }
+  },
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };
 

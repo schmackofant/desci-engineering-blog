@@ -4,15 +4,22 @@ import MainHead from '../components/MainHead.astro';
 import Nav from '../components/Nav.astro';
 import MainContent from '../components/MainContent.astro';
 import Footer from '../components/Footer.astro';
+import authorData from '../data/authors.json';
 
-const {description, canonicalURL, image} = Astro.props;
-const title = `${Astro.props.content.title} | ${SITE.title}`
+const { content } = Astro.props;
+const title = `${content.title} | ${SITE.title}`
+let canonicalURL = Astro.request.canonicalURL;
+const author = authorData[content.author]
+
+function formatDate(date) {
+	return new Date(date).toUTCString().replace(/(\d\d\d\d) .*/, '$1'); // remove everything after YYYY
+}
 ---
 
 <html lang="en">
 	<head>
 		<title>{title}</title>
-		<MainHead {title} {description} image={image} {canonicalURL} />
+		<MainHead {title} {content.description} image={content.image} {canonicalURL} />
 	</head>
 
 	<body>
@@ -20,8 +27,25 @@ const title = `${Astro.props.content.title} | ${SITE.title}`
 			<Nav />
 			<div class="flex grow justify-center px-4 sm:px-8">
 				<MainContent>
-					<!-- slot: your page content will be injected here. -->
-					<slot />
+					<article>
+						<h1 class="mt-8 sm:mt-12 text-2xl sm:text-3xl md:text-4xl font-bold">{Astro.props.content.title}</h1>
+
+						<div class="flex items-center mt-1.5 justify-between">
+							<div class="flex items-center text-gray-700 ">
+								<a href={`/authors/${content.author}`}><img src={author.image} class="h-6 w-6 sm:h-8 sm:w-8 rounded-full mr-2"></a>
+								<a class="text-sm sm:text-base hover:underline" href={`/authors/${content.author}`}>{author.name}</a>
+								<span class="px-1">&#8729;</span>
+								<time class="date" datetime={content.date}>{formatDate(content.date)}</time>
+							</div>
+						</div>
+
+						{content.image &&
+							<img src={content.image} class="mt-4">
+						}
+
+						<div class="text-gray-800 prose-lg mt-6"><slot /></div>
+					</article>
+					<div class="pb-24"></div>
 				</MainContent>
 			</div>
 			<Footer />
