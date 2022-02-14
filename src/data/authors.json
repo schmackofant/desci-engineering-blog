@@ -1,14 +1,17 @@
 {
-  "don": {
-    "name": "Don Quixote",
-    "image": "/images/authors/don.jpg"
-  },
-  "sancho": {
-    "name": "Sancho Panza",
-    "image": "/images/authors/sancho.jpg"
-  },
   "schmackofant": {
     "name": "Schmackofant",
-    "image": "/images/authors/schmackofant.png"
+    "image": "/images/authors/schmackofant.png",
+    "website": "https://github.com/schmackofant"
+  },
+  "carlo": {
+    "name": "Carlo Mallone",
+    "image": "/images/authors/carlo.jpg",
+    "website": "https://github.com/"
+  },
+  "cristian": {
+    "name": "Cristian Serb",
+    "image": "/images/authors/cristian.jpg",
+    "website": "https://github.com/"
   }
 }
