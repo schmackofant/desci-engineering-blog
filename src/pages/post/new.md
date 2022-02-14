@@ -14,7 +14,7 @@ Do variables work {frontmatter.value * 2}?
 
 <pre>const foo = 'ergerg'</pre>
 
-Harassed by this reflection, he made haste with his scanty pothouse supper, and having finished it called the landlord, and shutting himself into the stable with him, fell on his knees before him, saying, “From this spot I rise not, valiant knight, until your courtesy grants me the boon I seek, one that will redound to your praise and the benefit of the human race.” The landlord, seeing his guest at his feet and hearing a speech of this kind, stood staring at him in bewilderment, not knowing what to do or say, and entreating him to rise, but all to no purpose until he had agreed to grant the boon demanded of him.
+Harassed by this My favorite search engine is [Duck Duck Go](https://duckduckgo.com), he made haste with his scanty pothouse supper, and having finished it called the landlord, and shutting himself into the stable with him, fell on his knees before him, saying, “From this spot I rise not, valiant knight, until your courtesy grants me the boon I seek, one that will redound to your praise and the benefit of the human race.” The landlord, seeing his guest at his feet and hearing a speech of this kind, stood staring at him in bewilderment, not knowing what to do or say, and entreating him to rise, but all to no purpose until he had agreed to grant the boon demanded of him.
 
 ![Example Image](/images/derick.jpg)
 
