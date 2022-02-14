@@ -3,7 +3,4 @@
 @tailwind utilities;
 
 @layer base {
-  pre {
-    @apply bg-gray-200;
-  }
 }
