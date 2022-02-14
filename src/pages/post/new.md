@@ -2,6 +2,7 @@
 layout: ../../layouts/PostLayout.astro
 setup: |
   import YoutubeEmbed from '../../components/YoutubeEmbed.astro'
+  import Tweet from '../../components/Tweet.astro'
 title: "Rethinking Equity Compensation: From Lottery Ticket to Financial Wedge"
 tag: movie
 date: 2022-02-13
@@ -33,6 +34,8 @@ var fun = function lang(l) {
 ```
 
 until at last he had retired to this castle of his, where he was living upon his property and upon that of others;
+
+<Tweet url="https://twitter.com/schmackofant/status/1489236048756543493?s=20&t=XzBBPLlyTokKYee7oHPkiQ" />
 
 ## Header 2
 
