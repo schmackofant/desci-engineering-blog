@@ -28,7 +28,7 @@ const description = `These are all the articles written by ${author.name}`;
 ---
 
 <BaseLayout {title} {description} image={posts[0].image} {canonicalURL}>
-	<div class="flex items-center mt-8 sm:mt-12 mb-10 justify-center">
+	<div class="flex items-center mb-10 justify-center">
 		<img class="h-16 w-16 rounded-full mr-3" src={author.image} alt="" />
 		<h1 class="text-2xl sm:text-3xl text-center">Articles by {author.name} <small class="text-base hover:underline text-molecule"><a target="_blank" href={author.website}>&#8594; Website</a></small></h1>
 	</div>
@@ -36,5 +36,4 @@ const description = `These are all the articles written by ${author.name}`;
 	<div class="space-y-12 sm:space-y-20">
 		{posts.map((post) => <PostPreview post={post} author={author} image={post.image} />)}
 	</div>
-	<div class="pb-24"></div>
 </BaseLayout>

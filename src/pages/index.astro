@@ -26,13 +26,11 @@ let firstPage = allPosts.slice(0, SITE.postsPerPage);
 ---
 
 <BaseLayout {title} {description} image={allPosts[0].image} {canonicalURL}>
-	<div class="pt-8 sm:pt-12 space-y-12 sm:space-y-20">
+	<div class="space-y-12 sm:space-y-20">
 		{firstPage.map((post) => <PostPreview post={post} image={post.image} author={authorData[post.author]} />)}
 	</div>
 
 	{allPosts.length > SITE.postsPerPage &&
 		<Pagination prevUrl="/posts" nextUrl="/posts/2" />
 	}
-
-	<div class="pb-24"></div>
 </BaseLayout>

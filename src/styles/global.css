@@ -4,3 +4,9 @@
 
 @layer base {
 }
+
+@layer components {
+  .page-content-padding {
+    @apply px-4 sm:px-8 mt-8 sm:mt-12 pb-24;
+  }
+}
