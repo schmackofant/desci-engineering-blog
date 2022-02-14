@@ -11,6 +11,7 @@ module.exports = {
     extend: {
       colors: {
         'molecule': '#0dc1d2',
+        'molecule-aqua' : '#42dac7'
       },
       fontFamily: {
         sans: ['Sora', ...defaultTheme.fontFamily.sans],
