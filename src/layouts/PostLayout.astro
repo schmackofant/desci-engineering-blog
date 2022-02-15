@@ -1,4 +1,5 @@
 ---
+import slugify from "slugify";
 import { SITE } from '../config.ts';
 import MainHead from '../components/MainHead.astro';
 import Nav from '../components/Nav.astro';
@@ -44,6 +45,13 @@ function formatDate(date) {
 						}
 
 						<div class="text-gray-800 prose prose-base sm:prose-lg prose-a:text-molecule mt-6 max-w-none"><slot /></div>
+
+						<div class="border-t border-gray-200 mt-8 pt-1.5">
+							<span class="text-base text-gray-600 font-bold">Tags:</span>
+							{content.tags.map((tag) => (
+								<span class="tag"><a class="text-molecule hover:underline" href={`/tags/${slugify(tag, {lower: true, strict: true})}`}>{tag}</a></span>
+							))}
+						</div>
 					</article>
 				</MainContent>
 			</div>
@@ -51,3 +59,9 @@ function formatDate(date) {
 		</div>
 	</body>
 </html>
+
+<style lang="scss">
+.tag ~ .tag::before{
+	content: ", ";
+}
+</style>

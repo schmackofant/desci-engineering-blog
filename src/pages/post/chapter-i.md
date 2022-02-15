@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/PostLayout.astro
 title: Chapter I
-tag: movie
+tags: ["Decentralized Storage", "IPFS"]
 date: 2021-05-17
 image: /images/derick.jpg
 author: cristian

@@ -4,7 +4,7 @@ setup: |
   import YoutubeEmbed from '../../components/YoutubeEmbed.astro'
   import Tweet from '../../components/Tweet.astro'
 title: "Rethinking Equity Compensation: From Lottery Ticket to Financial Wedge"
-tag: movie
+tags: ["Decentralized Storage"]
 date: 2022-02-13
 author: schmackofant
 description: Technical literacy matters because a lot of people work at companies that sell software. And everybody works at companies that use software.

@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/PostLayout.astro
 title: Chapter II
-tag: movie
+tags: ["Decentralized Storage", "Filecoin"]
 date: 2021-05-18
 image: /images/chapter-02.jpg
 author: carlo
