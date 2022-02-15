@@ -36,7 +36,7 @@ function formatDate(date) {
 								<a href={`/authors/${content.author}`}><img src={author.image} class="h-6 w-6 sm:h-8 sm:w-8 rounded-full mr-2"></a>
 								<a class="text-sm sm:text-base hover:underline" href={`/authors/${content.author}`}>{author.name}</a>
 								<span class="px-1">&#8729;</span>
-								<time class="date" datetime={content.date}>{formatDate(content.date)}</time>
+								<time class="text-sm date" datetime={content.date}>{formatDate(content.date)}</time>
 							</div>
 						</div>
 
