@@ -15,6 +15,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Sora', ...defaultTheme.fontFamily.sans],
+        serif: ['Lora', ...defaultTheme.fontFamily.serif],
       },
     }
   },
@@ -22,4 +23,12 @@ module.exports = {
     require('@tailwindcss/typography'),
   ],
 };
+
+// font-family: 'Andada Pro', serif;
+
+// font-family: 'Hahmlet', serif;
+
+// font-family: 'Lora', serif;
+
+// font-family: 'Sora', sans-serif;
 
