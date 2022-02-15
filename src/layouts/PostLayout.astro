@@ -34,9 +34,9 @@ function formatDate(date) {
 						<div class="flex items-center mt-1.5 justify-between">
 							<div class="flex items-center text-gray-700 ">
 								<a href={`/authors/${content.author}`}><img src={author.image} class="h-6 w-6 sm:h-8 sm:w-8 rounded-full mr-2"></a>
-								<a class="text-sm sm:text-base hover:underline" href={`/authors/${content.author}`}>{author.name}</a>
+								<a class="text-sm sm:text-base hover:underline font-bold" href={`/authors/${content.author}`}>{author.name}</a>
 								<span class="px-1">&#8729;</span>
-								<time class="text-sm date" datetime={content.date}>{formatDate(content.date)}</time>
+								<time class="text-sm sm:text-base date" datetime={content.date}>{formatDate(content.date)}</time>
 							</div>
 						</div>
 
