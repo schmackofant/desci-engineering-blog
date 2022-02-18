@@ -2,7 +2,7 @@
 layout: ../../layouts/PostLayout.astro
 title: Chapter II
 tags: ["Decentralized Storage", "Filecoin"]
-date: 2021-05-18
+date: 2021-05-19
 image: /images/chapter-02.jpg
 author: carlo
 description: Which Treats of the First Sally the Ingenious Don Quixote Made From Home
