@@ -1,5 +1,5 @@
 ---
-import { SITE } from '../config.ts';
+import { SITE } from '../config';
 import BaseLayout from '../layouts/BaseLayout.astro'
 import PostPreview from '../components/PostPreview.astro';
 import Pagination from '../components/Pagination.astro';
@@ -17,17 +17,17 @@ interface MarkdownFrontmatter {
 // All variables are available to use in the HTML template below.
 let title = SITE.title;
 let description = SITE.description;
-let canonicalURL = Astro.request.canonicalURL;
+let canonicalURL = Astro.canonicalURL;
 
 // Data Fetching: List all Markdown posts in the repo.
-let allPosts = Astro.fetchContent<MarkdownFrontmatter>('./post/*.md');
-allPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
+let allPosts = await Astro.glob('./post/*.md');
+allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
 let firstPage = allPosts.slice(0, SITE.postsPerPage);
 ---
 
-<BaseLayout {title} {description} image={allPosts[0].image} {canonicalURL}>
+<BaseLayout {title} {description} image={allPosts[0].frontmatter.image} {canonicalURL}>
 	<div class="space-y-12 sm:space-y-20">
-		{firstPage.map((post) => <PostPreview post={post} image={post.image} author={authorData[post.author]} />)}
+		{firstPage.map((post) => <PostPreview post={post} image={post.frontmatter.image} author={authorData[post.frontmatter.author]} />)}
 	</div>
 
 	{allPosts.length > SITE.postsPerPage &&

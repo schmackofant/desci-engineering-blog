@@ -1,6 +1,6 @@
 ---
 import slugify from "slugify";
-import { SITE } from '../config.ts';
+import { SITE } from '../config';
 import MainHead from '../components/MainHead.astro';
 import Nav from '../components/Nav.astro';
 import MainContent from '../components/MainContent.astro';
@@ -9,7 +9,7 @@ import authorData from '../data/authors.json';
 
 const { content } = Astro.props;
 const title = `${content.title} | ${SITE.title}`
-let canonicalURL = Astro.request.canonicalURL;
+let canonicalURL = Astro.canonicalURL;
 const author = authorData[content.author]
 
 function formatDate(date) {

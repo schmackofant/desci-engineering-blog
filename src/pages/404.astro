@@ -1,5 +1,5 @@
 ---
-import { SITE } from '../config.ts';
+import { SITE } from '../config';
 import BaseLayout from '../layouts/BaseLayout.astro'
 import PostPreview from '../components/PostPreview.astro';
 import Pagination from '../components/Pagination.astro';
@@ -7,7 +7,7 @@ import authorData from '../data/authors.json';
 
 const title = `Page not found 404 | ${SITE.title}`;
 let description = SITE.description;
-let canonicalURL = Astro.request.canonicalURL;
+let canonicalURL = Astro.canonicalURL;
 ---
 
 <BaseLayout {title} {description} {canonicalURL}>

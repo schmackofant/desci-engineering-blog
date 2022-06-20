@@ -1,16 +1,16 @@
 ---
 import slugify from "slugify";
-import { SITE } from '../../config.ts';
+import { SITE } from '../../config';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PostPreview from '../../components/PostPreview.astro';
 import authorData from '../../data/authors.json';
 
-export function getStaticPaths() {
-	const allPosts = Astro.fetchContent<MarkdownFrontmatter>('../post/*.md');
+export async function getStaticPaths() {
+	const allPosts = await Astro.glob('../post/*.md');
 
 	let tags = [];
 	allPosts.forEach(function(post) {
-		post.tags.forEach(function(tag) {
+		post.frontmatter.tags.forEach(function(tag) {
 			tags.push(tag)
 		})
 	});
@@ -27,10 +27,10 @@ interface MarkdownFrontmatter {
 }
 
 const { allPosts, fullTag } = Astro.props;
-const { params, canonicalURL } = Astro.request;
+const { params, canonicalURL } = Astro;
 
 /** filter posts by tag, sort by date */
-const posts = allPosts.filter((post) => post.tags.includes(fullTag)).sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
+const posts = allPosts.filter((post) => post.frontmatter.tags.includes(fullTag)).sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
 
 const title = `All articles tagged with '${fullTag}' | ${SITE.title}`;
 const description = `These are all the articles tagged with '${fullTag}'`;
@@ -42,6 +42,6 @@ const description = `These are all the articles tagged with '${fullTag}'`;
 	</div>
 
 	<div class="space-y-12 sm:space-y-20">
-		{posts.map((post) => <PostPreview post={post} author={authorData[post.author]} image={post.image} />)}
+		{posts.map((post) => <PostPreview post={post} author={authorData[post.frontmatter.author]} image={post.frontmatter.image} />)}
 	</div>
 </BaseLayout>
