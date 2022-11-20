@@ -17,10 +17,10 @@ interface MarkdownFrontmatter {
 // All variables are available to use in the HTML template below.
 let title = SITE.title;
 let description = SITE.description;
-let canonicalURL = Astro.canonicalURL;
+let canonicalURL = Astro.url;
 
 // Data Fetching: List all Markdown posts in the repo.
-let allPosts = await Astro.glob('./post/*.md');
+let allPosts = await Astro.glob('./post/*.mdx');
 allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
 let firstPage = allPosts.slice(0, SITE.postsPerPage);
 ---

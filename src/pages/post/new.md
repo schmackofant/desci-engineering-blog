@@ -13,7 +13,7 @@ value: 128
 
 And where he received all knights-errant of whatever rank or condition they might be, all for the great love he bore them and that they might share their substance with him in return for his benevolence.
 
-Do variables work {frontmatter.value * 2}?
+Do variables work {frontmatter.value \* 2}?
 
 <pre>const foo = 'Bar'</pre>
 
@@ -30,9 +30,9 @@ The landlord, who, as has been mentioned, was something of a wag, and had alread
 ```js
 // Javascript code with syntax highlighting.
 var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
+  dateformat.i18n = require("./lang/" + l);
   return true;
-}
+};
 ```
 
 until at last he had retired to this castle of his, where he was living upon his property and upon that of others;
@@ -50,7 +50,7 @@ Text can be **bold**, _italic_, or ~~strikethrough~~.
 ## Table
 
 | head1        | head two          | three |
-|:-------------|:------------------|:------|
+| :----------- | :---------------- | :---- |
 | ok           | good swedish fish | nice  |
 | out of stock | good and plenty   | nice  |
 | ok           | good `oreos`      | hmm   |
@@ -60,10 +60,10 @@ and where he received all knights-errant of whatever rank or condition they migh
 
 ### Here is an unordered list:
 
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
+- Item foo
+- Item bar
+- Item baz
+- Item zip
 
 ### And an ordered list:
 

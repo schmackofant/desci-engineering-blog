@@ -9,7 +9,7 @@ import authorData from '../data/authors.json';
 
 const { content } = Astro.props;
 const title = `${content.title} | ${SITE.title}`
-let canonicalURL = Astro.canonicalURL;
+let canonicalURL = Astro.url;
 const author = authorData[content.author]
 
 function formatDate(date) {

@@ -6,7 +6,7 @@ import PostPreview from '../../components/PostPreview.astro';
 import authorData from '../../data/authors.json';
 
 export async function getStaticPaths() {
-	const allPosts = await Astro.glob('../post/*.md');
+	const allPosts = await Astro.glob('../post/*.mdx');
 
 	let tags = [];
 	allPosts.forEach(function(post) {
