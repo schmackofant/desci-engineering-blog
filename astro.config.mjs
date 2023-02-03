@@ -1,5 +1,5 @@
-import preact from "@astrojs/preact";
 import { defineConfig } from "astro/config";
+import preact from "@astrojs/preact";
 import mdx from "@astrojs/mdx";
 import tailwind from "@astrojs/tailwind";
 
