@@ -27,7 +27,8 @@ interface MarkdownFrontmatter {
 }
 
 const { allPosts, fullTag } = Astro.props;
-const { params, canonicalURL } = Astro;
+const { params } = Astro;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 /** filter posts by tag, sort by date */
 const posts = allPosts.filter((post) => post.frontmatter.tags.includes(fullTag)).sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());

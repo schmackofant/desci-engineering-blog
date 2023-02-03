@@ -14,5 +14,5 @@ export default defineConfig({
       config: { applyBaseStyles: false },
     }),
   ],
-  site: "https://desci-engineering.netlify.app",
+  site: "https://desci-engineering.netlify.app/",
 });

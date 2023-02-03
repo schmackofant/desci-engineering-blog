@@ -17,7 +17,8 @@ interface MarkdownFrontmatter {
 }
 
 const { allPosts } = Astro.props;
-const { params, canonicalURL } = Astro;
+const { params } = Astro;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 /** filter posts by author, sort by date */
 const posts = allPosts.filter((post) => post.frontmatter.author === params.author).sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
